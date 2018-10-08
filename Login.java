@@ -1,14 +1,17 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class Login {
 	
 	//Για να γλιτωσουμε το database χρησιμοποιουμε ArrayList οπου θα εχει τα attributes των employees
 	private List<Employee> employees;
+
 	
-	public Login() {
-		
+	public Login() {		
 		employees = new ArrayList<>();
+//		String position[] = new String[employees.size()];
+
 		
 		//Customer Service
 		employees.add(new Employee("Sarah", "111", "Customer Service", "sarah@sep.se", 20, "female", 1));
@@ -33,32 +36,49 @@ public class Login {
 		
 		//HR 
 		employees.add(new Employee("Simon", "678", "HR", "simon@sep.se", 35, "male", 10));
-		
-
-		}
+	}
 	
-	public Employee EmployeeLogin(String name, String password) {
-		
+	
+	public Employee EmployeeLogin(String name, String password) {		
 		for(Employee employee : employees) {
-			if(employee.getName().equals(name) && employee.getPassword().equals(password))
+			if(employee.getName().equals(name) && employee.getPassword().equals(password)) {
+				System.out.println("You have logged in succesfully!");
+				}
 				return employee;
-			}
-	
+		}
 		return null;
 
 	}
 	
 	
+	
 	public Employee getPosition(Position position){
 		for(Employee employee : employees){
-			if(employee.getPosition() == position){
+			if(employee.getPosition().equals(position)){
 				return employee;
 			}
 		}
+		return null;
 	}
 	
 	public List<Employee> getEmployee(){
-		return employee;
+		return employees;
 	}
 		
 }
+	
+	
+// Create a method to return the position of the employee.
+//	public String position(Position position) {
+//		for(Employee employee : employees) {
+//			System.out.println(employee.getPosition());
+//		}
+//		return "";
+//	}
+
+	
+	
+
+	
+	
+
