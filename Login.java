@@ -1,9 +1,10 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class Login {
 	
 	//Για να γλιτωσουμε το database χρησιμοποιουμε ArrayList οπου θα εχει τα attributes των employees
-	private ArrayList<Employee> employees;
+	private List<Employee> employees;
 	
 	public Login() {
 		
@@ -46,4 +47,18 @@ public class Login {
 		return null;
 
 	}
+	
+	
+	public Employee getPosition(Position position){
+		for(Employee employee : employees){
+			if(employee.getPosition() == position){
+				return employee;
+			}
+		}
+	}
+	
+	public List<Employee> getEmployee(){
+		return employee;
+	}
+		
 }
